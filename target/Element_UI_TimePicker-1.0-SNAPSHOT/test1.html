@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：Element_UI_TimePicker
+  File name(文件名): test1
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/29
+  Time(创建时间)： 21:27
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/element-ui.css">
+    <script src="js/vue.js"></script>
+    <script src="js/element-ui.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <el-time-select
+            v-model="value"
+            @change="change"
+            :picker-options="
+            { start: '09:30',
+              step: '00:10',
+              end: '10:30',
+              minTime: '00:00',
+              maxTime: '23:59'
+            }">
+
+    </el-time-select>
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            value: "",
+        },
+        methods: {
+            change: function ()
+            {
+                console.log(this.value)
+            }
+        },
+        mounted()
+        {
+
+        }
+    })
+</script>
+
+</body>
+</html>
