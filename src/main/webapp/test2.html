@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：Element_UI_TimePicker
+  File name(文件名): test2
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/29
+  Time(创建时间)： 21:43
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/element-ui.css">
+    <script src="js/vue.js"></script>
+    <script src="js/element-ui.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <el-time-picker
+            v-model="value1"
+            @change="change(value1)"
+            :picker-options="{
+      selectableRange:
+      '18:30:00 - 20:30:00'
+    }"
+            placeholder="任意时间点">
+    </el-time-picker>
+    <el-time-picker
+            arrow-control
+            @change="change(value2)"
+            v-model="value2"
+            :picker-options="{
+      selectableRange:
+       '18:30:00 - 20:30:00'
+    }"
+            placeholder="任意时间点">
+    </el-time-picker>
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            value1: new Date(),
+            value2: new Date(),
+
+        },
+        methods: {
+            change: function (values)
+            {
+                console.log(values)
+            }
+        },
+        mounted()
+        {
+
+        }
+    })
+</script>
+</body>
+</html>
